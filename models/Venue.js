@@ -2,10 +2,6 @@ const { DataTypes } = require('sequelize');
 const { sequelize } = require('../config/db');
 
 const Venue = sequelize.define('Venue', {
-  name: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
   location: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -18,7 +14,7 @@ const Venue = sequelize.define('Venue', {
     type: DataTypes.DATE,
     allowNull: false,
   },
-  cost: {
+  price: {
     type: DataTypes.FLOAT,
     allowNull: false,
   },

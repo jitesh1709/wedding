@@ -2,15 +2,15 @@ const { DataTypes } = require('sequelize');
 const { sequelize } = require('../config/db');
 
 const Music = sequelize.define('Music', {
-  serviceType: {
+  name: {
     type: DataTypes.STRING, // e.g., DJ, Live Band
     allowNull: false,
   },
-  playlist: {
+  description: {
     type: DataTypes.TEXT, // or JSON for a structured playlist
     allowNull: true,
   },
-  cost: {
+  price: {
     type: DataTypes.FLOAT,
     allowNull: false,
   },

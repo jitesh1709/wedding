@@ -2,19 +2,15 @@ const { DataTypes } = require('sequelize');
 const { sequelize } = require('../config/db');
 
 const Catering = sequelize.define('Catering', {
-  serviceName: {
+  name: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  menuItems: {
-    type: DataTypes.TEXT, // or JSON to store structured menu details
-    allowNull: false,
-  },
-  estimatedCost: {
+  price: {
     type: DataTypes.FLOAT,
     allowNull: false,
   },
-  dietaryRestrictions: {
+  description: {
     type: DataTypes.TEXT,
     allowNull: true,
   },
