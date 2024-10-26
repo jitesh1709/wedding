@@ -1,10 +1,24 @@
 require('dotenv').config();
 const express = require('express');
 const { connectDB, sequelize } = require('./config/db.js');
+const bodyParser = require('body-parser');
+const session = require('express-session');
+const passport = require('passport');
+require('./config/passport')(passport); // Import Passport configuration
 
 const app = express();
+app.use(bodyParser.json());
+app.use(
+  session({
+    secret: 'your_secret_key', // Change this to a secure random key
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+
 connectDB();
-app.use(express.json());
 
 // Sync all models
 sequelize.sync({ force: false }).then(() => {
