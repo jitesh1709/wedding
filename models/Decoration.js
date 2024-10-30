@@ -14,6 +14,10 @@ const Decoration = sequelize.define('Decoration', {
     type: DataTypes.TEXT, // Detailed description of the decorations
     allowNull: true,
   },
+  imageUrl: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  }
 });
 
 module.exports = Decoration;

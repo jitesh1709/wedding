@@ -18,6 +18,10 @@ const Venue = sequelize.define('Venue', {
     type: DataTypes.FLOAT,
     allowNull: false,
   },
+  imageUrl: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  }
 });
 
 module.exports = Venue;
