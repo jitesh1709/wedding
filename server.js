@@ -25,6 +25,7 @@ sequelize.sync({ force: false }).then(() => {
   console.log('Database synchronized');
 });
 
+app.use('/api/user', require('./routes/user.js'));
 app.use('/api/catering', require('./routes/catering.js'));
 app.use('/api/venue', require('./routes/venue.js'));
 app.use('/api/music', require('./routes/music.js'));
